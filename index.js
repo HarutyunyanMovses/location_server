@@ -22,7 +22,7 @@ app.use(express.json({ limit: "30mb", extended: true }));
   try {
     console.log(req.body);
     const newLoc = new loc({
-      location: req.body,
+      location: req.body.location,
     });
       await newLoc.save();
     res.send(true)

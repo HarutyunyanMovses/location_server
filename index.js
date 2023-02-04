@@ -34,7 +34,7 @@ app.use(express.json({ limit: "30mb", extended: true }));
 async function startAPP() {
   try {
     mongoose
-      .connect("mongodb+srv://admin:admin@cluster0.tcjaeiy.mongodb.net/Chat", {
+      .connect("mongodb+srv://admin:admin@cluster0.xgwn7ch.mongodb.net/?retryWrites=true&w=majority", {
         useUnifiedTopology: true,
         useNewUrlParser: true,
       })

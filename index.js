@@ -3,8 +3,6 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
-const http = require("http").createServer(app)
-module.exports = http
 // routers
 const loc = require("./models/location")
 const mess = require("./models/message")
@@ -32,9 +30,9 @@ app.use(express.json({ limit: "30mb", extended: true }));
   }
 })
 
-app.post("/from_INESA", async (rew,res)=>{
+app.post("/from_INESA", async (req,res)=>{
   const newMess = new mess({
-    message:req.body.message
+    message:req.body.message,
   })
   await newMess.save()
   res.send("I send message to you )) ")

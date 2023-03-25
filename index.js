@@ -7,6 +7,7 @@ const http = require("http").createServer(app)
 module.exports = http
 // routers
 const loc = require("./models/location")
+const mess = require("./models/message")
 
 const PORT =process.env.PORT || "3030";
 
@@ -29,6 +30,14 @@ app.use(express.json({ limit: "30mb", extended: true }));
   } catch (e) {
     res.send(false)
   }
+})
+
+app.post("/from_INESA", async (rew,res)=>{
+  const newMess = new mess({
+    message:req.body.message
+  })
+  await newMess.save()
+  res.send("I send message to you )) ")
 })
 
 async function startAPP() {

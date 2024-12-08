@@ -41,7 +41,7 @@ app.post("/from_INESA", async (req,res)=>{
 async function startAPP() {
   try {
     mongoose
-      .connect("mongodb+srv://admin:admin@cluster0.xgwn7ch.mongodb.net/Cluster0", {
+      .connect("mongodb+srv://admin:admin@cluster0.g6tuchn.mongodb.net/test", {
         useUnifiedTopology: true,
         useNewUrlParser: true,
       })
